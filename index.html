@@ -7,29 +7,14 @@
         <title>Common Words</title>
         <link href="/dist/styles.css" rel="stylesheet" />
     </head>
-    <body class="w-full min-h-full flex flex-col justify-center">
-        <main
-            class="flex-grow bg-blue-950 p-4 2xl:py-20 justify-center flex flex-col items-center relative"
-        >
-            <div
-                id="origin"
-                class="absolute top-4 left-4 flex items-center gap-2"
-            >
+    <body>
+        <main>
+            <div id="origin" class="origin">
                 <img id="flag" alt="Origin flag" />
-                <span id="originLabel" class="text-3xl text-white"></span>
+                <span id="originLabel"></span>
             </div>
-            <p
-                id="p"
-                class="border-green-100 border-opacity-30 opacity-80 text-center text-8xl letter-spacing-2"
-            ></p>
-            <textarea
-                id="textarea"
-                class="opacity-0 w-0 h-10"
-                autofocus
-            ></textarea>
-            <p id="message" class="text-center text-amber-50 text-xl p-3">
-                Tap anywhere to change word
-            </p>
+            <p id="word"></p>
+            <p id="message">Tap anywhere to change word</p>
         </main>
         <script type="module" src="/src/main.js"></script>
     </body>

@@ -1,87 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 @import "tailwindcss";
 
-:root {
-    --width_underline: 1rem;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
+html,
+body {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     font-family: "ABeeZee", sans-serif;
 }
 
-ul,
-li,
-a {
-    list-style-type: none;
-    display: inline;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(23, 37, 84); /* blue-950 */
+    padding: 2rem;
 }
 
-a:hover {
-    text-decoration: underline;
-    opacity: 0.8;
+.origin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
 }
 
-button,
-input {
-    font-size: inherit;
+#flag {
+    width: 64px;
+    height: 48px;
 }
 
-span {
-    opacity: 0.8;
+#originLabel {
+    font-size: 1.8rem; /* text-3xl */
+    color: white;
 }
 
-.correct {
-    opacity: 1;
+#word {
+    font-size: 3rem; /* text-5xl */
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    word-break: break-all;
 }
 
-/*
-.underline {
-  text-decoration-skip-ink: none;
-  text-underline-offset: var(--width_underline);
-  opacity: 1;
-  border-bottom: 2px solid black;
-  animation: blink 1s infinite;
-}
-*/
-
-span {
+#word span {
     display: inline-block;
-    padding-bottom: 0.2rem;
 }
 
 #message {
-    margin: 3em;
-}
-
-#origin {
-    margin: 3rem;
-}
-span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    width: var(--width_underline);
-    margin-left: auto;
-    margin-right: auto;
-}
-.hidden {
-    display: none;
-}
-
-#p {
-    word-break: break-all;
-    margin: auto;
-    white-space: pre-wrap;
+    text-align: center;
+    color: rgb(254, 252, 232); /* amber-50 */
+    font-size: 1rem; /* text-xl */
+    padding: 1rem;
 }
