@@ -1,3 +1,5 @@
-# Plant Orthographe
+# Common Words
 
-This micro web app is a typographic training with plant names.
+Pronounce the words correctly.
+
+[Website Link](https://common-words.onrender.com/)

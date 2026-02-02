@@ -4,14 +4,20 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>A</title>
-        <link rel="icon" type="image/x-icon" href="./public/ico.svg" />
+        <title>Common Words</title>
         <link href="/dist/styles.css" rel="stylesheet" />
     </head>
     <body class="w-full min-h-full flex flex-col justify-center">
         <main
-            class="flex-grow bg-green-100 p-4 2xl:py-20 justify-center flex flex-col items-center relative"
+            class="flex-grow bg-blue-950 p-4 2xl:py-20 justify-center flex flex-col items-center relative"
         >
+            <div
+                id="origin"
+                class="absolute top-4 left-4 flex items-center gap-2"
+            >
+                <img id="flag" alt="Origin flag" />
+                <span id="originLabel" class="text-3xl text-white"></span>
+            </div>
             <p
                 id="p"
                 class="border-green-100 border-opacity-30 opacity-80 text-center text-8xl letter-spacing-2"

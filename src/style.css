@@ -58,6 +58,9 @@ span {
     padding-bottom: 0.2rem;
 }
 
+#origin {
+    margin: 3rem;
+}
 span::after {
     content: "";
     position: absolute;
@@ -65,7 +68,6 @@ span::after {
     right: 0;
     bottom: 0;
     height: 2px;
-    background-color: red;
     width: var(--width_underline);
     margin-left: auto;
     margin-right: auto;
