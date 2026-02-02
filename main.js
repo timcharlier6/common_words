@@ -2,7 +2,6 @@ import { englishFromFrench, frenchFromEnglish } from "./words.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const wordEl = document.getElementById("word");
-  let DEBOUNCE = 500;
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -86,8 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (event) => {
     event.preventDefault();
     clearTimeout(inputTimeOut);
-    inputTimeOut = setTimeout(() => {
-      nextWord();
-    }, DEBOUNCE);
+    nextWord();
   });
 });
