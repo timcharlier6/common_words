@@ -62,4 +62,5 @@ main {
     color: rgb(254, 252, 232); /* amber-50 */
     font-size: 1rem; /* text-xl */
     padding: 1rem;
+    margin-bottom: 4rem;
 }
