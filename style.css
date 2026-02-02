@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
-@import "tailwindcss";
 
 * {
     box-sizing: border-box;
@@ -43,7 +42,7 @@ main {
 }
 
 #word {
-    font-size: 3rem; /* text-5xl */
+    font-size: 2rem; /* text-5xl */
     text-align: center;
     flex-grow: 1;
     display: flex;
