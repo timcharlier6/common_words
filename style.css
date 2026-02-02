@@ -42,7 +42,7 @@ main {
 }
 
 #word {
-    font-size: 2rem; /* text-5xl */
+    font-size: 3rem; /* text-5xl */
     text-align: center;
     flex-grow: 1;
     display: flex;
