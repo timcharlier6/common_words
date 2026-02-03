@@ -1,12 +1,5 @@
 import fs from "node:fs";
-import path from "node:path";
 import puppeteer from "puppeteer";
-
-async function run() {
-  const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
-}
 
 async function scrapeWords(url, category) {
   console.log(`Scraping ${category} from ${url}...`);
@@ -34,36 +27,6 @@ async function scrapeWords(url, category) {
             .map((link) => (link.textContent || "").trim())
             .filter(Boolean);
         }
-
-        // Fallback for annex-like pages (e.g., fr.wiktionary annex)
-        const root = document.querySelector(".mw-parser-output");
-        if (!root) return [];
-
-        const set = new Set();
-
-        // Collect linked words
-        const linkEls = Array.from(root.querySelectorAll("a"));
-        linkEls.forEach((a) => {
-          const t = (a.textContent || "").trim();
-          if (t) set.add(t);
-        });
-
-        // Collect bolded words
-        const boldEls = Array.from(root.querySelectorAll("b, strong"));
-        boldEls.forEach((b) => {
-          const t = (b.textContent || "").trim();
-          if (t) set.add(t);
-        });
-
-        // Collect words from list items (tokenize to pick word-like chunks)
-        const liEls = Array.from(root.querySelectorAll("li"));
-        liEls.forEach((li) => {
-          const text = (li.textContent || "").trim();
-          const tokens = text.match(/[A-Za-zÀ-ÖØ-öø-ÿœæç]+/g) || [];
-          tokens.forEach((tok) => set.add(tok.trim()));
-        });
-
-        return Array.from(set);
       });
 
       allWords = allWords.concat(words);
@@ -96,11 +59,10 @@ async function scrapeWords(url, category) {
 
 async function main() {
   const urlEnglishFromFrench =
-    "https://en.wiktionary.org/wiki/Category:English_terms_derived_from_French";
+    "https://en.wiktionary.org/wiki/Category:English_unadapted_borrowings_from_French";
   const urlFrenchFromEnglish =
-    "https://fr.wiktionary.org/wiki/Cat%C3%A9gorie:Mots_en_fran%C3%A7ais_issus_d%E2%80%99un_mot_en_anglais";
+    "https://fr.wiktionary.org/wiki/Cat%C3%A9gorie:Anglicismes_en_fran%C3%A7ais";
 
-  // Scrape both sources
   const englishFromFrench = await scrapeWords(
     urlEnglishFromFrench,
     "English from French",

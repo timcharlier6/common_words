@@ -81,10 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nextWord();
 
-  let inputTimeOut;
   document.addEventListener("click", (event) => {
-    event.preventDefault();
-    clearTimeout(inputTimeOut);
     nextWord();
   });
 });
